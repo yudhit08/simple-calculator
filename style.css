@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --background : rgb(43, 43, 43);
+    --number : rgb(70, 70, 70);
+    --top-operator : #eee;
+    --side-operator : rgb(228, 194, 0);
+}
+
+body {
+    background-color: rgb(24, 24, 24);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 330px;
+    background-color: var(--background);
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px rgb(19, 19, 19);
+}
+
+#history-number {
+    color: rgb(145, 145, 145);
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 20px 10px 0 10px;
+    overflow-wrap: break-word;
+}
+
+#display {
+    color: #eee;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 10px 10px 5px 10px;
+    overflow-wrap: break-word;
+}
+
+#operatorTop {
+    padding: 10px 10px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    float: left;
+}
+
+#operatorTop button {
+    flex: 1 1 30%;
+    cursor: pointer;
+    background-color: var(--top-operator);
+    font-size: 20px;
+    box-shadow: 4px 4px 8px rgba(3, 3, 3, 0.555);
+    height: 67px;
+    border-radius: 50%;
+}
+
+#operatorTop button:hover{
+    background-color: rgb(202, 202, 202);
+}
+
+#operatorSide {
+    padding: 10px 10px 10px 0;
+    display: flex;
+    float: right;
+    flex-direction: column;
+    width: 25%;
+}
+
+#operatorSide button {
+    width: 69px;
+    height: 67px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--side-operator);
+    font-size: 20px;
+    box-shadow: 4px 4px 8px rgba(3, 3, 3, 0.555);
+}
+
+#operatorSide button:hover{
+    background-color: rgb(245, 208, 0);
+}
+
+#operatorSide button:nth-child(5) {
+    background-color: rgb(8, 189, 180);
+}
+
+#number {
+    padding: 0 10px 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    width: 75%;
+}
+
+#number button {
+    flex: 1 1 30%;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--number);
+    box-shadow: 4px 4px 8px rgba(3, 3, 3, 0.555);
+    height: 67px;
+    color: #eee;
+}
+
+#number button:hover{
+    background-color: rgb(94, 94, 94);
+}
+
+button {
+    outline: none;
+    font-size: 20px;
+    transition: .4s;
+    cursor: pointer;
+    border: none;
+    margin: 3px;
+}
+
+hr {
+    opacity: 0.5;
+}
