@@ -7,8 +7,8 @@ const historyNum = document.getElementById('history-number')
 var hiddenNumber = 0
 var result = 0
 var opt = ''
-var simpan = []
-var numBaru
+var saveDisplay = []
+var saveNumBefore
 
 function cekDisplay() {
     if (display.innerText === '0' || display.innerText === '+' || display.innerText === '-' || display.innerText === 'x' || display.innerText === '/') {
@@ -20,16 +20,17 @@ optTopBtn.addEventListener('click', function (event) {
     if (event.target.className === 'clear') {
         display.innerText = '0'
         historyNum.innerText = '0'
-        simpan = []
+        saveDisplay = []
     }
     else if (event.target.className === 'delete') {
-        if (simpan.length == 1) {
+        if (saveDisplay.length == 1) {
             display.innerText = '0'
         }
         else {
-            simpan.pop()
-            for (let i = 0; i < simpan.length; i++) {
-                display.innerText = simpan.join('');
+            saveDisplay.pop()
+            for (let i = 0; i < saveDisplay.length; i++) {
+                display.innerText = saveDisplay.join('');
+                saveNumBefore = display.innerText
             }
         }
 
@@ -44,8 +45,8 @@ numBtn.addEventListener('click', function (event) {
     if (event.target.tagName === 'BUTTON') {
         cekDisplay()
         display.innerText += event.target.innerText
-        numBaru = display.innerText
-        simpan.push(event.target.innerText)
+        saveNumBefore = display.innerText
+        saveDisplay.push(event.target.innerText)
     }
 })
 
@@ -68,8 +69,8 @@ optSideBtn.addEventListener('click', function (event) {
                     opt = '/'
                     break;
             }
-            historyNum.innerText = numBaru + ' ' + opt
-            hiddenNumber = parseInt(numBaru)
+            historyNum.innerText = saveNumBefore + ' ' + opt
+            hiddenNumber = parseInt(saveNumBefore)
             display.innerText = '0'
         } 
         else {
@@ -89,11 +90,13 @@ optSideBtn.addEventListener('click', function (event) {
                     break;
             }
             var bantu = display.innerText
+            //fungsi untuk memisahkan setiap karakter menjadi array
             bantu.split('')
-            simpan = []
-            numBaru = display.innerText
+            //empty saveDisplay
+            saveDisplay = []
+            saveNumBefore = display.innerText
             for (let i = 0; i < bantu.length; i++) {
-                simpan[i] = bantu[i]
+                saveDisplay[i] = bantu[i]
             }
         }
     }
