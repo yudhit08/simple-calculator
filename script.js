@@ -8,6 +8,7 @@ var hiddenNumber = 0
 var result = 0
 var opt = ''
 var simpan = []
+var numBaru
 
 function cekDisplay() {
     if (display.innerText === '0' || display.innerText === '+' || display.innerText === '-' || display.innerText === 'x' || display.innerText === '/') {
@@ -43,6 +44,7 @@ numBtn.addEventListener('click', function (event) {
     if (event.target.tagName === 'BUTTON') {
         cekDisplay()
         display.innerText += event.target.innerText
+        numBaru = display.innerText
         simpan.push(event.target.innerText)
     }
 })
@@ -66,8 +68,8 @@ optSideBtn.addEventListener('click', function (event) {
                     opt = '/'
                     break;
             }
-            historyNum.innerText = display.innerText + ' ' + opt
-            hiddenNumber = parseInt(display.innerText)
+            historyNum.innerText = numBaru + ' ' + opt
+            hiddenNumber = parseInt(numBaru)
             display.innerText = '0'
         } 
         else {
