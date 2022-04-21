@@ -70,7 +70,7 @@ optSideBtn.addEventListener('click', function (event) {
                     break;
             }
             historyNum.innerText = saveNumBefore + ' ' + opt
-            hiddenNumber = parseInt(saveNumBefore)
+            hiddenNumber = parseFloat(saveNumBefore)
             display.innerText = '0'
         } 
         else {
@@ -103,17 +103,21 @@ optSideBtn.addEventListener('click', function (event) {
 })
 
 function plus() {
-    return hiddenNumber + parseInt(display.innerText)
+    result = hiddenNumber + parseFloat(display.innerText)
+    return result
 }
 
 function minus() {
-    return hiddenNumber - parseInt(display.innerText)
+    result = hiddenNumber - parseFloat(display.innerText)
+    return result
 }
 
 function times() {
-    return hiddenNumber * parseInt(display.innerText)
+    result = hiddenNumber * parseFloat(display.innerText)
+    return result
 }
 
 function divide() {
-    return hiddenNumber / parseInt(display.innerText)
+    result = hiddenNumber / parseFloat(display.innerText)
+    return result
 }
