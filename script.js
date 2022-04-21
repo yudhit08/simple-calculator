@@ -91,6 +91,7 @@ optSideBtn.addEventListener('click', function (event) {
             var bantu = display.innerText
             bantu.split('')
             simpan = []
+            numBaru = display.innerText
             for (let i = 0; i < bantu.length; i++) {
                 simpan[i] = bantu[i]
             }
