@@ -6,7 +6,7 @@ const clearCalc = document.querySelector('#operatorTop button.clear')
 const historyNum = document.getElementById('history-number')
 var hiddenNumber = 0
 var result = 0
-var opt
+var opt = ''
 var simpan = []
 
 function cekDisplay() {
@@ -85,6 +85,12 @@ optSideBtn.addEventListener('click', function (event) {
                 case '/':
                     display.innerText = divide()
                     break;
+            }
+            var bantu = display.innerText
+            bantu.split('')
+            simpan = []
+            for (let i = 0; i < bantu.length; i++) {
+                simpan[i] = bantu[i]
             }
         }
     }
