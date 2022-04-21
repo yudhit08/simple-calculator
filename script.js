@@ -86,6 +86,12 @@ optSideBtn.addEventListener('click', function (event) {
                     display.innerText = divide()
                     break;
             }
+            var bantu = display.innerText
+            bantu.split('')
+            simpan = []
+            for (let i = 0; i < bantu.length; i++) {
+                simpan[i] = bantu[i]
+            }
         }
     }
 })
