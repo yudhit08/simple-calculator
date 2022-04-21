@@ -51,25 +51,7 @@ optSideBtn.addEventListener('click', function (event) {
     if (event.target.tagName === 'BUTTON') {
         cekDisplay()
 
-        if (event.target.innerText == '=') {
-            switch (opt) {
-                case '+':
-                    display.innerText = plus()
-                    break;
-                case '-':
-                    display.innerText = minus()
-                    break;
-                case 'x':
-                    display.innerText = times()
-                    break;
-                case '/':
-                    display.innerText = divide()
-                    break;
-            }
-
-            historyNum.innerText = display.innerText
-
-        } else {
+        if (event.target.innerText != '=') {
             switch (event.target.innerText) {
                 case '+':
                     opt = '+'
@@ -87,6 +69,23 @@ optSideBtn.addEventListener('click', function (event) {
             historyNum.innerText = display.innerText + ' ' + opt
             hiddenNumber = parseInt(display.innerText)
             display.innerText = '0'
+        } 
+        else {
+            historyNum.innerText = hiddenNumber + ' ' + opt + ' ' + display.innerText
+            switch (opt) {
+                case '+':
+                    display.innerText = plus()
+                    break;
+                case '-':
+                    display.innerText = minus()
+                    break;
+                case 'x':
+                    display.innerText = times()
+                    break;
+                case '/':
+                    display.innerText = divide()
+                    break;
+            }
         }
     }
 })
