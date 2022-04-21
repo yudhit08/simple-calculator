@@ -20,6 +20,7 @@ optTopBtn.addEventListener('click', function (event) {
     if (event.target.className === 'clear') {
         display.innerText = '0'
         historyNum.innerText = '0'
+        saveNumBefore = '0'
         saveDisplay = []
     }
     else if (event.target.className === 'delete') {
