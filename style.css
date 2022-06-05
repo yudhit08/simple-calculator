@@ -38,6 +38,7 @@ body {
     text-align: right;
     padding: 20px 10px 0 10px;
     overflow-wrap: break-word;
+    min-height: 8vh;
 }
 
 #display {
@@ -46,6 +47,7 @@ body {
     text-align: right;
     padding: 10px 10px 5px 10px;
     overflow-wrap: break-word;
+    min-height: 10vh;
 }
 
 #operatorTop {

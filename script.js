@@ -14,23 +14,17 @@ for (var i = 0; i < keys.length; i++) {
         var inputVal = input.innerHTML
         var btnVal = this.innerHTML
 
-        if (input.innerHTML == '0') {
-            input.innerHTML = '0' 
-        }
-
-        else if (btnVal == 'DEL') {
-            if (input.innerHTML.length <= 1) {
-                input.innerHTML = '0'
-            } else {
+        if (btnVal == 'DEL') {
+        
                 input.innerHTML = input.innerHTML.slice(0, -1)
-            }
+            
             decimalAdded = false
         }
 
         // If clear key is pressed, erase everything
         else if (btnVal == 'C') {
-            input.innerHTML = '0'
-            history.innerHTML = '0'
+            input.innerHTML = ''
+            history.innerHTML = ''
             decimalAdded = false
         }
 
