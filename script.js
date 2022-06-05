@@ -3,7 +3,6 @@ var keys = document.querySelectorAll('button')
 var operators = ['+', '-', 'x', '÷', '^']
 // Set decimal flag for use later
 var decimalAdded = false
-var submit = false
 
 // loop through all keys
 for (var i = 0; i < keys.length; i++) {
@@ -16,11 +15,15 @@ for (var i = 0; i < keys.length; i++) {
         var btnVal = this.innerHTML
 
         if (input.innerHTML == '0') {
-            input.innerHTML = btnVal 
+            input.innerHTML = '0' 
         }
 
         else if (btnVal == 'DEL') {
-            input.innerHTML = input.innerHTML.slice(0, -1)
+            if (input.innerHTML.length <= 1) {
+                input.innerHTML = '0'
+            } else {
+                input.innerHTML = input.innerHTML.slice(0, -1)
+            }
             decimalAdded = false
         }
 
@@ -32,7 +35,7 @@ for (var i = 0; i < keys.length; i++) {
         }
 
         // If eval key is pressed, calculate and display the result
-        else if (btnVal == '=' || submit == true) {
+        else if (btnVal == '=') {
             var equation = inputVal //append equation to variable
             var lastChar = equation[equation.length - 1] //target the end of the eval string
 
