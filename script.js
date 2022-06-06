@@ -124,10 +124,10 @@ document.onkeydown = (event) => {
     if (key_press == 8 && event.shiftKey == false) {
         input.innerHTML += key_press
     }
-    if (key_press == 9) {
+    if (key_press == 9 && event.shiftKey == false) {
         input.innerHTML += key_press
     }
-    if (key_press == 0) {
+    if (key_press == 0 && event.shiftKey == false) {
         input.innerHTML += key_press
     }
 
@@ -148,14 +148,24 @@ document.onkeydown = (event) => {
     if ((input.Val != '' && operators.indexOf(lastChar) == -1 && key_code == 54 && event.shiftKey)) {
         document.querySelector('#display p').innerHTML += '^'
     }
+    if (key_code == 57 && event.shiftKey == true) {
+        document.querySelector('#display p').innerHTML += '('
+    }
+    if (key_code == 48 && event.shiftKey == true) {
+        document.querySelector('#display p').innerHTML += ')'
+    }
     if (key_code == 13 || key_code == 187 && event.shiftKey == false) {
         history.innerHTML = input.innerHTML
-        input.innerHTML = eval(equation);
+        input.innerHTML = eval(equation)
         //reset decimal added flag
-        decimalAdded = false;
+        decimalAdded = false
     }
-    if (key_code == 8 || key_code == 46) {
-        input.innerHTML = input.innerHTML.slice(0, -1);
-        decimalAdded = false;
+    if (key_code == 8) {
+        input.innerHTML = input.innerHTML.slice(0, -1)
+        decimalAdded = false
+    }
+    if (key_code == 46) {
+        input.innerHTML = ''
+        history.innerHTML = ''
     }
 }
