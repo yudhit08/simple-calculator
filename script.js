@@ -152,6 +152,10 @@ document.onkeydown = (event) => {
     if (key_code == 48 && event.shiftKey == true) {
         document.querySelector('#display p').innerHTML += ')'
     }
+    if (key_code == 190) {
+        document.querySelector('#display p').innerHTML += '.'
+        decimalAdded = true
+    }
     if (key_code == 13 || key_code == 187 && event.shiftKey == false) {
         history.innerHTML = input.innerHTML
         input.innerHTML = eval(equation)
