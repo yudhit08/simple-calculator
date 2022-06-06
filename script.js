@@ -15,9 +15,7 @@ for (var i = 0; i < keys.length; i++) {
         var btnVal = this.innerHTML
 
         if (btnVal == 'DEL') {
-        
                 input.innerHTML = input.innerHTML.slice(0, -1)
-            
             decimalAdded = false
         }
 
