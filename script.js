@@ -1,6 +1,6 @@
 var keys = document.querySelectorAll('button')
 
-var operators = ['+', '-', 'x', '÷', '^']
+var operators = ['+', '-', 'x', '/', '^']
 // Set decimal flag for use later
 var decimalAdded = false
 
